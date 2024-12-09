@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片压缩工具</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="免费在线图片压缩工具">
+    <meta name="keywords" content="图片压缩,在线工具,图片优化">
+    <meta property="og:title" content="在线图片压缩工具">
+    <meta property="og:description" content="免费在线图片压缩工具，支持PNG、JPG格式">
+    <meta property="og:image" content="你的网站预览图URL">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>图片压缩工具</h1>
+            <p>简单快捷的在线图片压缩服务</p>
+        </header>
+
+        <main>
+            <div class="preview-container">
+                <div class="preview-box upload-area" id="dropZone">
+                    <h3>原图</h3>
+                    <input type="file" id="fileInput" accept="image/png, image/jpeg" hidden>
+                    <div class="upload-content" id="uploadContent">
+                        <div class="upload-icon-wrapper">
+                            <svg class="upload-icon" viewBox="0 0 24 24">
+                                <path d="M12 4L12 16M12 4L7 9M12 4L17 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                                <path d="M3 19H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <p>点击或拖拽图片到这里</p>
+                        <p class="upload-hint">支持 PNG、JPG 格式</p>
+                    </div>
+                    <div class="image-preview" id="imagePreviewContainer" style="display: none;">
+                        <img id="originalImage" alt="原图预览">
+                        <div class="image-actions">
+                            <button class="action-btn replace-btn" id="replaceBtn">替换</button>
+                            <button class="action-btn delete-btn" id="deleteBtn">删除</button>
+                        </div>
+                        <div class="file-info">
+                            <span id="originalSize"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-box">
+                    <h3>压缩后</h3>
+                    <div class="image-preview" id="compressedPreviewContainer">
+                        <img id="compressedImage" alt="压缩后预览" style="display: none;">
+                        <div class="file-info">
+                            <span id="compressedSize"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="compression-controls" style="display: none;">
+                <div class="quality-control">
+                    <label for="quality">压缩质量：<span id="qualityValue">80%</span></label>
+                    <input type="range" id="quality" min="1" max="100" value="80">
+                </div>
+            </div>
+
+            <button id="downloadBtn" class="download-btn" style="display: none;">
+                下载压缩后的图片
+            </button>
+        </main>
+
+        <footer>
+            <p>已累计压缩 <span id="compressCount">0</span> 张图片</p>
+            <p>
+                <a href="mailto:你的邮箱">反馈建议</a>
+                |
+                <a href="https://github.com/你的用户名/项目" target="_blank">GitHub</a>
+            </p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // 百度统计代码
+    </script>
+</body>
+</html> 
